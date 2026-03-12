@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
+part of 'resources.dart';
 
 class AppColors {
+  AppColors._();
+
   static const mint = Color(0xFF3FA7A3);
   static const lavender = Color(0xFFCFA7D6);
   static const skyBlue = Color(0xFF8ED3F4);

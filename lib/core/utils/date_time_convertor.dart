@@ -14,6 +14,15 @@ class DateTimeConvertor {
     return 'Good Evening';
   }
 
+  static List<DateTime> generateWeek() {
+    final today = DateTime.now();
+
+    return List.generate(
+      7,
+      (index) => today.subtract(Duration(days: 3)).add(Duration(days: index)),
+    );
+  }
+
   static String formatTimestamp(DateTime dateTime) {
     final now = DateTime.now();
     final difference = now.difference(dateTime);
@@ -72,6 +81,10 @@ class DateTimeConvertor {
 
   static String getDueDateFormat(DateTime dateTime) {
     return DateFormat('dd MMMM yyyy  hh:mm a').format(dateTime);
+  }
+
+  static String getHeaderDate(DateTime dateTime) {
+    return DateFormat('EEEE MMM, dd').format(dateTime);
   }
 
   static String getDayMonthAndYearNumericals(DateTime dateTime) {

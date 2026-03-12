@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mental_health_ui/core/theme/text_style_theme.dart';
 import 'color_scheme.dart';
 
 ThemeData get customLightTheme {
   return ThemeData(
     colorScheme: lightColorScheme,
-    scaffoldBackgroundColor: const Color(0xFFF3F6F7),
+    scaffoldBackgroundColor: const Color(0xFFEEF3F5),
     textTheme: TextTheme(
       headlineLarge: AppTextStyles.headline1,
       headlineMedium: AppTextStyles.headline2,
