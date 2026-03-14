@@ -13,7 +13,7 @@ class TrendingCard extends StatelessWidget {
     const days = ['s', 'm', 't', 'w', 't', 'f', 's'];
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade300),
         borderRadius: BorderRadius.circular(20),
@@ -21,56 +21,58 @@ class TrendingCard extends StatelessWidget {
       child: Row(
         children: [
           /// LEFT SIDE
-          Row(
-            children: [
-              Container(
-                height: 75,
-                width: 75,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFDCC6E9),
-                  borderRadius: BorderRadius.circular(18),
-                ),
-                child: const Icon(
-                  Icons.psychology,
-                  color: Colors.white,
-                  size: 28,
-                ),
-              ),
-
-              12.pw,
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    activity.title,
-                    style: AppTextStyles.headline3.copyWith(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+          Expanded(
+            child: Row(
+              children: [
+                Container(
+                  height: 75,
+                  width: 75,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFDCC6E9),
+                    borderRadius: BorderRadius.circular(18),
                   ),
+                  child: const Icon(
+                    Icons.psychology,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                ),
 
-                  4.ph,
+                12.pw,
 
-                  Row(
-                    children: [
-                      const Icon(Icons.schedule, size: 14),
-                      4.pw,
-                      Text(
-                        activity.duration,
-                        style: AppTextStyles.bodySmall.copyWith(
-                          color: Colors.grey.shade600,
-                          fontSize: 14,
-                        ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      activity.title,
+                      style: AppTextStyles.headline3.copyWith(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                    ),
+
+                    4.ph,
+
+                    Row(
+                      children: [
+                        const Icon(Icons.schedule, size: 14),
+                        4.pw,
+                        Text(
+                          activity.duration,
+                          style: AppTextStyles.bodySmall.copyWith(
+                            color: Colors.grey.shade600,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
 
-          const Spacer(),
+          // const Spacer(),
 
           /// RIGHT SIDE
           Column(
@@ -96,8 +98,8 @@ class TrendingCard extends StatelessWidget {
                   activity.weeklyActivity.length,
                   (index) => Container(
                     margin: const EdgeInsets.symmetric(horizontal: 2),
-                    width: 8,
-                    height: 8,
+                    width: 8.5,
+                    height: 8.5,
                     decoration: BoxDecoration(
                       color: activity.weeklyActivity[index]
                           ? activity.color

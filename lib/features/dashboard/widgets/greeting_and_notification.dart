@@ -22,7 +22,7 @@ class GreetingAndNotification extends StatelessWidget {
         ),
         Spacer(),
         Container(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(100),

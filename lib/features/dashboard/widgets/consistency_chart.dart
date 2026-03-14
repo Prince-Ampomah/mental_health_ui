@@ -20,28 +20,47 @@ class ConsistencyChart extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: data.map((item) {
+
+            children: data.asMap().entries.map((entry) {
+              final index = entry.key;
+              final item = entry.value;
+
               final barHeight = maxHeight * item.value;
 
-              return Container(
-                width: 40,
-                height: barHeight,
-                padding: const EdgeInsets.symmetric(vertical: 5),
-                decoration: BoxDecoration(
-                  color: item.isHighlighted
-                      ? context.color.primary
-                      : Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: item.isHighlighted
-                    ? Text(
-                        item.value.toString(),
-                        textAlign: TextAlign.center,
-                        style: AppTextStyles.bodySmall.copyWith(
-                          color: Colors.white,
-                        ),
-                      )
-                    : null,
+              return TweenAnimationBuilder<double>(
+                tween: Tween(begin: 0, end: barHeight),
+
+                duration: Duration(milliseconds: 500 + (index * 150)),
+                curve: Curves.easeOutCubic,
+                builder: (context, double value, Widget? child) {
+                  return Container(
+                    width: 40,
+                    height: value,
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    decoration: BoxDecoration(
+                      // gradient: item.isHighlighted
+                      //     ? const LinearGradient(
+                      //         begin: Alignment.bottomCenter,
+                      //         end: Alignment.topCenter,
+                      //         colors: [Color(0xFF1F5F63), Color(0xFF3E8E93)],
+                      //       )
+                      //     : null,
+                      color: item.isHighlighted
+                          ? context.color.primary
+                          : Colors.grey.shade300,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: item.isHighlighted
+                        ? Text(
+                            item.value.toString(),
+                            textAlign: TextAlign.center,
+                            style: AppTextStyles.bodySmall.copyWith(
+                              color: Colors.white,
+                            ),
+                          )
+                        : null,
+                  );
+                },
               );
             }).toList(),
           ),

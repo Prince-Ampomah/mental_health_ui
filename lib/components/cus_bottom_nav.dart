@@ -27,7 +27,7 @@ class CustomBottomNavBar extends StatelessWidget {
         currentIndex: currentIndex,
         selectedItemColor: color.primary,
         unselectedItemColor: color.onSurface,
-        selectedFontSize: 15.0,
+        selectedFontSize: 14.0,
         unselectedFontSize: 14.0,
         iconSize: 30.0,
         onTap: onTap,

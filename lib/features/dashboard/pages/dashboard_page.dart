@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mental_health_ui/core/resources/resources.dart';
 import 'package:mental_health_ui/core/theme/text_style_theme.dart';
 import 'package:mental_health_ui/core/utils/date_time_convertor.dart';
 import 'package:mental_health_ui/core/utils/extension.dart';
@@ -70,9 +71,9 @@ class DashboardPage extends StatelessWidget {
 
                     IconButton.filled(
                       onPressed: () {},
-                      icon: Icon(Icons.add, size: 20),
+                      icon: Icon(Icons.add, size: 20, color: Colors.black),
                       style: IconButton.styleFrom(
-                        backgroundColor: const Color(0xFFDCC6E9),
+                        backgroundColor: AppColors.lavender,
                       ),
                     ),
                   ],
@@ -97,18 +98,17 @@ class DashboardPage extends StatelessWidget {
 
             10.ph,
 
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: const Text(
-                "Avg 12.3%",
-                style: TextStyle(color: Colors.white, fontSize: 12),
-              ),
-            ),
-
+            // Container(
+            //   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            //   decoration: BoxDecoration(
+            //     color: Colors.black,
+            //     borderRadius: BorderRadius.circular(10),
+            //   ),
+            //   child: const Text(
+            //     "Avg 12.3%",
+            //     style: TextStyle(color: Colors.white, fontSize: 12),
+            //   ),
+            // ),
             ConsistencyChart(data: consistencyData),
 
             30.ph,
@@ -123,10 +123,11 @@ class DashboardPage extends StatelessWidget {
               ),
             ),
 
-            10.ph,
+            15.ph,
 
+            // activity list
             SizedBox(
-              height: context.screenHeight * 0.18,
+              height: 150,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: activities.length,
@@ -136,8 +137,9 @@ class DashboardPage extends StatelessWidget {
               ),
             ),
 
-            10.ph,
+            15.ph,
 
+            // trending activities
             Text(
               'Trending',
               style: AppTextStyles.headline3.copyWith(
@@ -145,7 +147,7 @@ class DashboardPage extends StatelessWidget {
               ),
             ),
 
-            10.ph,
+            15.ph,
 
             TrendingCard(activity: trendingActivities[0]),
           ],
