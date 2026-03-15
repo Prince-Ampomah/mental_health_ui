@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mental_health_ui/components/app_shell.dart';
 import 'package:mental_health_ui/features/assistant/pages/assistant_page.dart';
+import 'package:mental_health_ui/features/assistant/pages/doctor_detail_page.dart';
 import 'package:mental_health_ui/features/dashboard/pages/dashboard_page.dart';
 import 'package:mental_health_ui/features/performance/pages/performance_page.dart';
 import 'package:mental_health_ui/routes/route_names.dart';
@@ -16,11 +17,13 @@ class AppRouter {
     navigatorKey: _parentNavigatorKey,
     initialLocation: RoutePaths.homePath,
     routes: [
-      // GoRoute(
-      //   path: RoutePaths.homePath,
-      //   name: RouteNames.home,
-      //   builder: (context, state) => const DashboardPage(),
-      // ),
+      GoRoute(
+        path: RoutePaths.doctorDetailPath,
+        name: RouteNames.doctorDetail,
+        builder: (context, state) =>  DoctorDetailPage(
+          params: state.extra as DoctorDetailParams,
+        ),
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
           return AppShellLayout(
