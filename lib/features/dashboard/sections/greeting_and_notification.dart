@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mental_health_ui/core/theme/text_style_theme.dart';
 import 'package:mental_health_ui/core/utils/date_time_convertor.dart';
 
-class GreetingAndNotification extends StatelessWidget {
-  const GreetingAndNotification({super.key});
+class GreetingAndNotificationSection extends StatelessWidget {
+  const GreetingAndNotificationSection({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -38,13 +38,13 @@ class ConsistencyChart extends StatelessWidget {
                     height: value,
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     decoration: BoxDecoration(
-                      // gradient: item.isHighlighted
-                      //     ? const LinearGradient(
-                      //         begin: Alignment.bottomCenter,
-                      //         end: Alignment.topCenter,
-                      //         colors: [Color(0xFF1F5F63), Color(0xFF3E8E93)],
-                      //       )
-                      //     : null,
+                      gradient: item.isHighlighted
+                          ? const LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              colors: [Color(0xFF1F5F63), Color(0xFF3E8E93)],
+                            )
+                          : null,
                       color: item.isHighlighted
                           ? context.color.primary
                           : Colors.grey.shade300,
@@ -52,10 +52,11 @@ class ConsistencyChart extends StatelessWidget {
                     ),
                     child: item.isHighlighted
                         ? Text(
-                            item.value.toString(),
+                            "${(item.value * 100).toInt()}%",
                             textAlign: TextAlign.center,
                             style: AppTextStyles.bodySmall.copyWith(
                               color: Colors.white,
+                              fontSize: 13,
                             ),
                           )
                         : null,

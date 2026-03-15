@@ -17,3 +17,13 @@ class TrendingActivityModel {
     required this.weeklyActivity,
   });
 }
+
+final trendingActivities = [
+  TrendingActivityModel(
+    title: "Meditation",
+    duration: "12h 32m in total",
+    icon: Icons.psychology,
+    color: const Color(0xFFDCC6E9),
+    weeklyActivity: [false, false, false, true, false, true, false],
+  ),
+];

@@ -85,7 +85,7 @@ class TrendingCard extends StatelessWidget {
                 crossAxisAlignment: .center,
                 children: [
                   Text("Last week"),
-                  4.ph,
+                  4.pw,
                   Icon(Icons.chevron_right, size: 18),
                 ],
               ),
