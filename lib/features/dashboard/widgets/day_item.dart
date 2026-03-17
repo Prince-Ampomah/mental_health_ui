@@ -9,7 +9,9 @@ class DayItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
+      curve: Curves.easeInOut,
       width: 42,
       height: 42,
       alignment: Alignment.center,
