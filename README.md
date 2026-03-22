@@ -1,17 +1,55 @@
-# mental_health_ui
+# 🧠 Mental Health UI - Flutter
 
-A new Flutter project.
+A clean Flutter implementation of a modern Mental Health mobile app UI inspired
+by Dribbble.
 
-## Getting Started
+This project was built as part of my journey back into mobile development —
+focusing on UI design, layout structure, and Flutter best practices.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Features
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- 📱 Clean and modern UI design
+- 🧩 Reusable Flutter widgets
+- 📊 Consistency tracking UI
+- 🧠 Therapist/Assistant interface
+- 📈 Performance & ranking screens
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 📱 Screenshots
+
+<p align="center">
+  <img src="assets/images/mental_health_ui.png" width="250"/>
+  <img src="assets/images/home_screen.png" width="250"/>
+  <img src="assets/images/assistant_screen.png" width="250"/>
+  <img src="assets/images/performance_screen.png" width="250"/>
+</p>
+
+---
+
+## 🛠️ Built With
+
+- Flutter
+- Dart
+
+---
+
+## 🎯 What I Learned
+
+- Structuring Flutter UI for scalability
+- Handling layout and responsiveness
+- Converting design (Dribbble) → real app
+- Improving UI consistency and spacing
+
+---
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/Prince-Ampomah/mental_health_ui
+cd mental_health_ui
+flutter pub get
+flutter run
+```
