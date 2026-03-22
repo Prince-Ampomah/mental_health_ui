@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mental_health_ui/components/cus_app_bar.dart';
 import 'package:mental_health_ui/components/cus_bottom_nav.dart';
 
 class AppShellLayout extends StatelessWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_ui/core/utils/extension.dart';
 import 'package:mental_health_ui/features/performance/models/performance_model.dart';
-import 'package:mental_health_ui/features/performance/pages/rankings_page.dart';
 import 'package:mental_health_ui/features/performance/widgets/activity_stat.dart';
 import 'package:mental_health_ui/features/performance/widgets/header.dart';
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mental_health_ui/core/resources/resources.dart';
 
 class DoctorModel {
   final String name;
@@ -37,7 +38,7 @@ final List<DoctorModel> doctors = [
     name: 'Dr. Sam Kartner',
     specialty: 'Psychologist',
     rating: 4.6,
-    imagePath: 'assets/images/doctor1.png',
+    imagePath:  Images.doctor,
     availableDays: ['Thr 16', 'Thr 17', 'Thr 18', 'Thr 19'],
     headerColor: const Color(0xFFEFCAE9),
     isAvailableToday: true,
@@ -48,7 +49,7 @@ final List<DoctorModel> doctors = [
     name: 'Dr. James Okafor',
     specialty: 'Therapist',
     rating: 4.8,
-    imagePath: 'assets/images/doctor1.png',
+    imagePath: Images.doctor1,
     availableDays: ['Thr 17', 'Thr 19'],
     headerColor: const Color(0xFF3FA7A3),
     isAvailableToday: false,
@@ -59,7 +60,7 @@ final List<DoctorModel> doctors = [
     name: 'Dr. Amara Nwosu',
     specialty: 'Counselor',
     rating: 4.5,
-    imagePath: 'assets/images/doctor1.png',
+    imagePath: Images.doctor2,
     availableDays: ['Thr 16', 'Thr 18', 'Thr 19'],
     headerColor: const Color(0xFFD4C5F9),
     isAvailableToday: true,
@@ -70,7 +71,7 @@ final List<DoctorModel> doctors = [
     name: 'Dr. Lena Fischer',
     specialty: 'Psychiatrist',
     rating: 4.9,
-    imagePath: 'assets/images/doctor1.png',
+    imagePath:  Images.doctor,
     availableDays: ['Thr 18', 'Thr 19'],
     headerColor: const Color(0xFFFFD6A5),
     isAvailableToday: false,
@@ -81,11 +82,13 @@ final List<DoctorModel> doctors = [
     name: 'Dr. Carlos Mejia',
     specialty: 'Psychologist',
     rating: 4.3,
-    imagePath: 'assets/images/doctor1.png',
+    imagePath:  Images.doctor2,
     availableDays: ['Thr 16', 'Thr 17'],
     headerColor: const Color(0xFFC8E6C9),
     isAvailableToday: true,
     reviewCount: 76,
     experience: '6 years',
   ),
+
+
 ];
