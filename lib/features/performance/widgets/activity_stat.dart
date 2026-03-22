@@ -6,7 +6,7 @@ import 'package:mental_health_ui/features/performance/models/performance_model.d
 class ActivityStat extends StatelessWidget {
   final ActivityStatModel stat;
 
-  const ActivityStat({required this.stat});
+  const ActivityStat({super.key, required this.stat});
 
   @override
   Widget build(BuildContext context) {
