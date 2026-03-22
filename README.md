@@ -1,7 +1,7 @@
 # 🧠 Mental Health UI - Flutter
 
 <p align="center">
-   <img src="assets/images/mental_health_ui.png" width="800"/>
+   <img src="assets/screenshots/mental_health_ui.png" width="800"/>
 </p>
 
 A clean Flutter implementation of a modern Mental Health mobile app UI inspired
@@ -25,9 +25,10 @@ focusing on UI design, layout structure, and Flutter best practices.
 ## 📱 Screenshots
 
 <p align="center">
-  <img src="assets/images/home_screen.png" width="250"/>
-  <img src="assets/images/assistant_screen.png" width="250"/>
-  <img src="assets/images/performance_screen.png" width="250"/>
+  <img src="assets/screenshots/home_screen.png" width="250"/>
+  <img src="assets/screenshots/assistant_screen.png" width="250"/>
+  <img src="assets/screenshots/assitant_detail_screenshot.png" width="250"/>
+  <img src="assets/screenshots/performance_screen.png" width="250"/>
 </p>
 
 ---
