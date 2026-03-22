@@ -58,86 +58,83 @@ class _DoctorListPageState extends State<DoctorListPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
-      color: const Color(0xFFEAF4F4),
-      child: Stack(
-        children: [
-          // ── SCROLLABLE CONTENT ──
-          CustomScrollView(
-            controller: _scrollController,
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              // Collapsible: title + bell + search
-              SliverToBoxAdapter(
-                child: DoctorSearchSection(
-                  controller: _searchController,
-                  onChanged: (val) => setState(() => _searchQuery = val),
-                  onClear: () {
-                    _searchController.clear();
-                    setState(() => _searchQuery = '');
-                  },
-                  hasQuery: _searchQuery.isNotEmpty,
-                ),
+    return Stack(
+      children: [
+        // ── SCROLLABLE CONTENT ──
+        CustomScrollView(
+          controller: _scrollController,
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            // Collapsible: title + bell + search
+            SliverToBoxAdapter(
+              child: DoctorSearchSection(
+                controller: _searchController,
+                onChanged: (val) => setState(() => _searchQuery = val),
+                onClear: () {
+                  _searchController.clear();
+                  setState(() => _searchQuery = '');
+                },
+                hasQuery: _searchQuery.isNotEmpty,
               ),
+            ),
 
-              // Pinned: filter chips + result count
-              SliverPersistentHeader(
-                pinned: true,
-                delegate: DoctorFilterSection(
-                  selectedFilter: _selectedFilter,
-                  resultCount: _filteredDoctors.length,
-                  onFilterSelected: (f) => setState(() => _selectedFilter = f),
-                ),
+            // Pinned: filter chips + result count
+            SliverPersistentHeader(
+              pinned: true,
+              delegate: DoctorFilterSection(
+                selectedFilter: _selectedFilter,
+                resultCount: _filteredDoctors.length,
+                onFilterSelected: (f) => setState(() => _selectedFilter = f),
               ),
+            ),
 
-              // Doctor cards or empty state
-              DoctorListSection(doctors: _filteredDoctors),
-            ],
-          ),
+            // Doctor cards or empty state
+            DoctorListSection(doctors: _filteredDoctors),
+          ],
+        ),
 
-          // ── OVERLAY SEARCH BUTTON ──
-          // Visible only when header has scrolled out of view
-          Positioned(
-            bottom: 16,
-            right: 20,
-            child: AnimatedSlide(
-              duration: const Duration(milliseconds: 250),
-              curve: Curves.easeOut,
-              offset: _isCollapsed ? Offset.zero : const Offset(0, 2.5),
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 200),
-                opacity: _isCollapsed ? 1.0 : 0.0,
-                child: IgnorePointer(
-                  ignoring: !_isCollapsed,
-                  child: GestureDetector(
-                    onTap: _revealSearch,
-                    child: Container(
-                      width: 44,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF1F5F63),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0xFF1F5F63).withAlpha(80),
-                            blurRadius: 12,
-                            offset: const Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: const Icon(
-                        Icons.search,
-                        color: Colors.white,
-                        size: 20,
-                      ),
+        // ── OVERLAY SEARCH BUTTON ──
+        // Visible only when header has scrolled out of view
+        Positioned(
+          bottom: 16,
+          right: 20,
+          child: AnimatedSlide(
+            duration: const Duration(milliseconds: 250),
+            curve: Curves.easeOut,
+            offset: _isCollapsed ? Offset.zero : const Offset(0, 2.5),
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 200),
+              opacity: _isCollapsed ? 1.0 : 0.0,
+              child: IgnorePointer(
+                ignoring: !_isCollapsed,
+                child: GestureDetector(
+                  onTap: _revealSearch,
+                  child: Container(
+                    width: 44,
+                    height: 44,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF1F5F63),
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFF1F5F63).withAlpha(80),
+                          blurRadius: 12,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: const Icon(
+                      Icons.search,
+                      color: Colors.white,
+                      size: 20,
                     ),
                   ),
                 ),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

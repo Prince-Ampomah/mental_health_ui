@@ -56,24 +56,7 @@ final rankings = [
     score: 9988,
     imagePath: '',
   ),
-  const RankingModel(
-    rank: 2,
-    name: 'Amara Nwosu',
-    score: 8741,
-    imagePath: '',
-  ),
-  const RankingModel(
-    rank: 3,
-    name: 'Prince Osei',
-    score: 7654,
-    imagePath: '',
-  ),
-  const RankingModel(
-    rank: 4,
-    name: 'Lena Fischer',
-    score: 6320,
-    imagePath: '',
-  ),
+  const RankingModel(rank: 2, name: 'Prince Osei', score: 7654, imagePath: ''),
 ];
 
 final activityStats = [
@@ -104,3 +87,10 @@ final trendingResult = const TrendingResultModel(
   iconBgColor: Color(0xFFCDEAD6),
   sparklineData: [0.4, 0.6, 0.5, 0.8, 0.6, 0.9, 0.7],
 );
+
+String formatScore(int score) {
+  if (score >= 1000) {
+    return '${(score / 1000).toStringAsFixed(score % 1000 == 0 ? 0 : 3).replaceAll(RegExp(r'0+$'), '').replaceAll(RegExp(r'\.$'), '')},${(score % 1000).toString().padLeft(3, '0')}';
+  }
+  return score.toString();
+}

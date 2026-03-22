@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mental_health_ui/components/cus_tab.dart';
+import 'package:mental_health_ui/components/cus_tab_bar.dart';
+import 'package:mental_health_ui/core/utils/extension.dart';
+import 'package:mental_health_ui/features/performance/pages/activity_page.dart';
 import 'package:mental_health_ui/features/performance/sections/performance_header_section.dart';
-import 'package:mental_health_ui/features/performance/sections/rankings_section.dart';
-import 'package:mental_health_ui/features/performance/sections/activity_section.dart';
+import 'package:mental_health_ui/features/performance/pages/rankings_page.dart';
 
 class PerformancePage extends StatefulWidget {
   const PerformancePage({super.key});
@@ -10,35 +13,51 @@ class PerformancePage extends StatefulWidget {
   State<PerformancePage> createState() => _PerformancePageState();
 }
 
-class _PerformancePageState extends State<PerformancePage> {
-  int _selectedTab = 1; // Default to Rankings (matches original design)
+class _PerformancePageState extends State<PerformancePage>
+    with SingleTickerProviderStateMixin {
+  late TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    // No Scaffold — AppShellLayout provides it
-    return ColoredBox(
-      color: const Color(0xFFEAF4F4),
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Title + bell + tab switcher
-            PerformanceHeaderSection(
-              selectedTab: _selectedTab,
-              onTabChanged: (tab) => setState(() => _selectedTab = tab),
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        PerformanceHeaderSection(),
 
-            // Tab content
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 250),
-              child: _selectedTab == 1
-                  ? const RankingsSection(key: ValueKey('rankings'))
-                  : const ActivitySection(key: ValueKey('activity')),
-            ),
+        CustomTabBar(
+          tabController: tabController,
+          indicatorWeight: 2.5,
+          labelColor: context.color.primary,
+          indicatorColor: context.color.primary,
+          unselectedLabelColor: Colors.grey[600],
+          tabBarIndicatorSize: TabBarIndicatorSize.label,
+          isScrollable: false,
+          labelPadding: EdgeInsets.symmetric(horizontal: 20.0),
+          tabs: [
+            CustomTab(tabName: 'Activity'),
+            CustomTab(tabName: 'Rankings'),
           ],
         ),
-      ),
+
+        Expanded(
+          child: TabBarView(
+            controller: tabController,
+            children: [ActivityPage(), RankingsPage()],
+          ),
+        ),
+      ],
     );
   }
 }

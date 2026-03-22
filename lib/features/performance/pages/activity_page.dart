@@ -4,8 +4,8 @@ import 'package:mental_health_ui/core/utils/extension.dart';
 import 'package:mental_health_ui/features/performance/models/performance_model.dart';
 import 'dart:math' as math;
 
-class ActivitySection extends StatelessWidget {
-  const ActivitySection({super.key});
+class ActivityPage extends StatelessWidget {
+  const ActivityPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +15,13 @@ class ActivitySection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // "Your result" heading
-          Text(
-            'Your result',
-            style: AppTextStyles.headline3.copyWith(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
+          Center(
+            child: Text(
+              'Your result',
+              style: AppTextStyles.headline3.copyWith(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
 
@@ -107,10 +108,7 @@ class _MoodSummaryCard extends StatelessWidget {
 class _SmileyIllustration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      size: const Size(70, 80),
-      painter: _SmileyPainter(),
-    );
+    return CustomPaint(size: const Size(70, 80), painter: _SmileyPainter());
   }
 }
 
@@ -219,11 +217,7 @@ class _TrendingResultCard extends StatelessWidget {
                 6.ph,
                 Row(
                   children: [
-                    Icon(
-                      Icons.schedule,
-                      size: 13,
-                      color: Colors.grey.shade500,
-                    ),
+                    Icon(Icons.schedule, size: 13, color: Colors.grey.shade500),
                     4.pw,
                     Text(
                       activity.duration,
@@ -246,10 +240,7 @@ class _TrendingResultCard extends StatelessWidget {
                 children: [
                   Text(
                     'Last week',
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: Colors.grey.shade500,
-                    ),
+                    style: TextStyle(fontSize: 11, color: Colors.grey.shade500),
                   ),
                   4.pw,
                   Icon(
