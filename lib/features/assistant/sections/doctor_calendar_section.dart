@@ -79,16 +79,9 @@ class _DoctorCalendarSectionState extends State<DoctorCalendarSection> {
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
                       shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withAlpha(15),
-                          blurRadius: 6,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
                     ),
                     child: Icon(
-                      Icons.chevron_left_rounded,
+                      Icons.arrow_back,
                       color: _currentMonthIndex > 0
                           ? Colors.black87
                           : Colors.grey.shade300,
@@ -105,7 +98,7 @@ class _DoctorCalendarSectionState extends State<DoctorCalendarSection> {
                       vertical: 10,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF1F5F63),
+                      color: widget.doctor.headerColor,
                       borderRadius: BorderRadius.circular(24),
                     ),
                     child: Text(
@@ -114,7 +107,7 @@ class _DoctorCalendarSectionState extends State<DoctorCalendarSection> {
                       style: const TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 15,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -129,16 +122,9 @@ class _DoctorCalendarSectionState extends State<DoctorCalendarSection> {
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
                       shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withAlpha(15),
-                          blurRadius: 6,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
                     ),
                     child: Icon(
-                      Icons.chevron_right_rounded,
+                      Icons.arrow_forward,
                       color: _currentMonthIndex < _months.length - 1
                           ? Colors.black87
                           : Colors.grey.shade300,
@@ -149,7 +135,7 @@ class _DoctorCalendarSectionState extends State<DoctorCalendarSection> {
             ),
           ),
 
-          20.ph,
+          40.ph,
 
           // ── "Available this week" label ──
           Text(

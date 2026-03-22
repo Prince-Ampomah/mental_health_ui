@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mental_health_ui/core/resources/resources.dart';
 
 // ── Leaderboard entry ──
 class RankingModel {
@@ -54,9 +55,14 @@ final rankings = [
     rank: 1,
     name: 'Geremy Boundea',
     score: 9988,
-    imagePath: '',
+    imagePath: Images.user1,
   ),
-  const RankingModel(rank: 2, name: 'Prince Osei', score: 7654, imagePath: ''),
+  const RankingModel(
+    rank: 2,
+    name: 'Prince Osei',
+    score: 7654,
+    imagePath: Images.user3,
+  ),
 ];
 
 final activityStats = [

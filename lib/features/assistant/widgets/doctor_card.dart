@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mental_health_ui/components/cus_circular_image.dart';
 import 'package:mental_health_ui/core/theme/text_style_theme.dart';
 import 'package:mental_health_ui/core/utils/extension.dart';
 import 'package:mental_health_ui/features/assistant/models/doctor_model.dart';
@@ -54,16 +55,23 @@ class DoctorCard extends StatelessWidget {
                       color: doctor.headerColor.withAlpha(200),
                       border: Border.all(color: Colors.white, width: 3),
                     ),
-                    child: ClipOval(
-                      child: Icon(
-                        Icons.person,
-                        size: 40,
-                        color: Colors.white.withAlpha(200),
-                      ),
-                      // Replace with:
-                      // Image.asset(doctor.imagePath, fit: BoxFit.cover)
-                      // once you have real images
-                    ),
+                    child: doctor.imagePath.isNotEmpty
+                        ? CircularImage(
+                            child: Image.asset(
+                              doctor.imagePath,
+                              fit: BoxFit.cover,
+                            ),
+                          )
+                        : ClipOval(
+                            child: Icon(
+                              Icons.person,
+                              size: 40,
+                              color: Colors.white.withAlpha(200),
+                            ),
+                            // Replace with:
+                            // Image.asset(doctor.imagePath, fit: BoxFit.cover)
+                            // once you have real images
+                          ),
                   ),
                 ),
 

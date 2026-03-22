@@ -8,14 +8,17 @@ class RankingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: rankings.length + 1,
-      itemBuilder: (BuildContext context, int index) {
-        if (index < rankings.length) {
-          return RankingCard(ranking: rankings[index]);
-        }
-        return ActivityPage();
-      },
+    return ColoredBox(
+      color: const Color(0xFFE9F2F4),
+      child: ListView.builder(
+        itemCount: rankings.length + 1,
+        itemBuilder: (BuildContext context, int index) {
+          if (index < rankings.length) {
+            return RankingCard(ranking: rankings[index]);
+          }
+          return ActivityPage();
+        },
+      ),
     );
   }
 }

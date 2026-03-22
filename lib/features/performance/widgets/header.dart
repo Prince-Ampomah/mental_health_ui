@@ -29,15 +29,26 @@ class Header extends StatelessWidget {
         Expanded(
           child: Row(
             children: [
-              CircularImage(
-                boxBorder: Border.all(width: 1),
-                child: Image.asset(
-                  Images.user,
-                  fit: BoxFit.cover,
-                  width: 60,
-                  height: 60,
+              if (ranking.imagePath.isNotEmpty)
+                CircularImage(
+                  boxBorder: Border.all(width: 1),
+                  child: Image.asset(
+                    ranking.imagePath,
+                    fit: BoxFit.cover,
+                    width: 60,
+                    height: 60,
+                  ),
+                )
+              else
+                CircularImage(
+                  boxBorder: Border.all(width: 1),
+                  child: Image.asset(
+                    Images.user,
+                    fit: BoxFit.cover,
+                    width: 60,
+                    height: 60,
+                  ),
                 ),
-              ),
 
               10.pw,
 

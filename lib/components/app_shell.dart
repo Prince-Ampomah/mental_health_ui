@@ -33,7 +33,7 @@ class AppShellLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: CustomAppBar(title: getTitles()),
+      backgroundColor: const Color(0xFFE9F2F4),
       body: SafeArea(child: navigationShell),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: navigationShell.currentIndex,

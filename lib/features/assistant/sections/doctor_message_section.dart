@@ -36,7 +36,7 @@ class _DoctorMessageSectionState extends State<DoctorMessageSection> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 24, 24, 24),
+      padding: const EdgeInsets.fromLTRB(24, 24, 24, 50),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
         decoration: BoxDecoration(

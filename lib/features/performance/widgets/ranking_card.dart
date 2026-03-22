@@ -20,7 +20,7 @@ class RankingCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withAlpha(10),
-            blurRadius: 8,
+            blurRadius: 5,
             offset: const Offset(0, 2),
           ),
         ],
